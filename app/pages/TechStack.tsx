@@ -17,7 +17,7 @@ export default function TechStack() {
 
   return (
     <>  
-      <div className="p-20">
+      <div className="p-20 overflow-x-hidden">
         <SubTitle title={"TECH"} className="text-start" />
 
         <motion.div
@@ -26,7 +26,7 @@ export default function TechStack() {
             willChange: "transform",
           }}
           animate={{
-            x: -scrollPos * 0.2, // Adjust scroll speed here
+            x: -scrollPos * 0.25, // Adjust scroll speed here
           }}
           transition={{
             type: "spring",
