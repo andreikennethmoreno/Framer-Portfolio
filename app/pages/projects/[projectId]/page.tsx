@@ -26,16 +26,9 @@ import p5 from "../../../../public/img/projects/PLACES/p5.webp";
 import p6 from "../../../../public/img/projects/PLACES/p6.webp";
 
 import ContentLayout from '@/app/components/ContentLayout';
-import ImageContainer from "@/app/components/ImageContainer";
 import SubTitle from '@/app/components/SubTitle';
 import Image from "next/image";
 
-
-// Define the ImageSrc interface
-interface ImageSrc {
-  id: number;
-  src: string; // The src will be the URL of the image
-}
 
 interface Project {
   id: number;

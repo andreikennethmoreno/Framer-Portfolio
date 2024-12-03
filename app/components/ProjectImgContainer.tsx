@@ -8,7 +8,7 @@ interface ImageSectionProps {
   title: string;
   images: { src: string; alt: string; height: number; width: number }[];
   isOdd: boolean;
-  projectId: number;
+  projectId?: number;
 }
 
 export default function ProjectImgContainer({

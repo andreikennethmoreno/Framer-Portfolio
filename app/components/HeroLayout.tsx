@@ -32,7 +32,6 @@ export default function HeroLayout({ heroTitle, heroSrcImg }: HeroLayoutProps) {
       imageElement.style.transform = `translateY(${offset}px)`;
 
       // Change title color dynamically
-      const titleTop = titleElement.getBoundingClientRect().top + window.scrollY;
       const isInsideImage = scrollY >= heroTop && scrollY <= heroBottom;
 
       titleElement.style.color = isInsideImage ? "#FFFFFF" : "#031728"; // White within the image, original color otherwise

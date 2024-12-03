@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import ContentLayout from "../components/ContentLayout";
 import ImageContainer from "../components/ImageContainer";
 import SubTitle from "../components/SubTitle";
 import aboutPic from "../../public/img/portfolio/aboutPic.jpg";
@@ -36,7 +35,6 @@ export default function About() {
                   width={400}
                   layout="intrinsic"
                   className="object-cover"
-                  topOffset={200}
                 />
               </div>
             </div>

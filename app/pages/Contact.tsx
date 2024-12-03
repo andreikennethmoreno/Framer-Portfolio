@@ -18,8 +18,7 @@ export default function Contact() {
       const scrollY = window.scrollY;
       const heroImageElement = heroImageRef.current;
       const heroOffsetTop = heroImageElement.offsetTop;
-      const heroHeight = heroImageElement.offsetHeight;
-
+      
       // Calculate the parallax offset
       const offset = (scrollY - heroOffsetTop) * 0.2; // Adjust speed here
       heroImageElement.style.transform = `translateY(${offset}px)`;

@@ -9,7 +9,6 @@ type ImageContainerProps = {
   alt: string; // Alt text for the image
   layout: "intrinsic" | "responsive" | "fixed" | "fill"; // Layout type for Next.js Image
   className: string;
-  topOffset?: number; // Make topOffset optional
 };
 
 export default function ImageContainer({
@@ -19,7 +18,6 @@ export default function ImageContainer({
   alt,
   layout,
   className,
-  topOffset = 0, // Default value for topOffset
 }: ImageContainerProps) {
   const [scrollY, setScrollY] = useState(0);
 
