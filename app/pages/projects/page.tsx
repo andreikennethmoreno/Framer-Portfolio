@@ -30,7 +30,6 @@ export default function ProjectList() {
                     <ProjectImgContainer
                         title={project.title}
                         isOdd={project.isOdd}
-                        projectId={project.id}
                         images={project.imgSrc.map((src, index) => ({
                             src,
                             alt: `A picture for ${project.title} ${index + 1}`,

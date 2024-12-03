@@ -8,14 +8,12 @@ interface ImageSectionProps {
   title: string;
   images: { src: string; alt: string; height: number; width: number }[];
   isOdd: boolean;
-  projectId?: number;
 }
 
 export default function ProjectImgContainer({
   title,
   images,
   isOdd,
-  projectId,
 }: ImageSectionProps) {
   const [isVisible, setIsVisible] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
