@@ -1,19 +1,20 @@
 import Link from "next/link"; // Import Link for navigation
 
-
 export default function NavBar() {
     return (
         <>
-            <div className="navbar bg-base-100 sticky top-0 z-50">
+            <div className="navbar sticky top-0 z-50 bg-transparent">
                 <div className="flex-1">
                     <Link href="/" passHref>
-                        <div className="btn btn-ghost text-md">DREIKEN<br />MORENO</div>
+                        <div className="btn rounded-lg btn-ghost text-md hover:text-white bg-white bg-opacity-50 backdrop-blur-md">
+                        DREIKEN<br />MORENO
+                        </div>
                     </Link>
                 </div>
 
                 <div className="flex-none">
-                    <ul className="menu menu-horizontal px-1">
-                        <li className="ml-[-1.5rem]">
+                    <ul className="menu menu-horizontal px-1 font-bold rounded-lg text-md hover:text-white hover:bg-transparent bg-white bg-opacity-50 backdrop-blur-md">
+                        <li className="">
                             <Link href="/" passHref>
                                 /&nbsp;&nbsp;HOME
                             </Link>
