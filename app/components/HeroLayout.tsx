@@ -14,7 +14,7 @@ export default function HeroLayout({ heroTitle, heroSrcImg }: HeroLayoutProps) {
   const imageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let frameId: number; // Declare a variable to store the frame ID
+    let frameId: number;
 
     const handleScroll = () => {
       if (!heroRef.current || !titleRef.current || !imageRef.current) return;
@@ -27,26 +27,28 @@ export default function HeroLayout({ heroTitle, heroSrcImg }: HeroLayoutProps) {
       const heroTop = heroElement.offsetTop;
       const heroBottom = heroTop + heroElement.offsetHeight;
 
-      // Apply Parallax Effect: Update translateY for the background image
-      const offset = (scrollY - heroTop) * 0.2; // Adjust parallax speed here
+      // Calculate the threshold where the title color changes (1/4 height of the image)
+      const imageHeight = imageElement.offsetHeight;
+      const colorChangeThreshold = heroTop + imageHeight / 3;
+
+      // Apply Parallax Effect
+      const offset = (scrollY - heroTop) * 0.2;
       imageElement.style.transform = `translateY(${offset}px)`;
 
-      // Change title color dynamically
-      const isInsideImage = scrollY >= heroTop && scrollY <= heroBottom;
+      // Change title color dynamically based on the threshold
+      const isWithinThreshold = scrollY >= colorChangeThreshold && scrollY <= heroBottom;
 
-      titleElement.style.color = isInsideImage ? "#FFFFFF" : "#031728"; // White within the image, original color otherwise
+      titleElement.style.color = isWithinThreshold ? "#FFFFFF" : "#031728";
     };
 
-    // Smooth scrolling effect with requestAnimationFrame
     const scrollHandler = () => {
       handleScroll();
-      frameId = requestAnimationFrame(scrollHandler); // Save the frame ID to cancel it later
+      frameId = requestAnimationFrame(scrollHandler);
     };
 
-    frameId = requestAnimationFrame(scrollHandler); // Initialize the scroll handler loop
+    frameId = requestAnimationFrame(scrollHandler);
 
-    // Cleanup on component unmount
-    return () => cancelAnimationFrame(frameId); // Pass the correct frame ID to cancel
+    return () => cancelAnimationFrame(frameId);
   }, []);
 
   return (
@@ -72,7 +74,7 @@ export default function HeroLayout({ heroTitle, heroSrcImg }: HeroLayoutProps) {
           style={{
             backgroundImage: `url(${heroSrcImg})`,
             imageRendering: "pixelated",
-            transition: "transform 0.1s ease-out", // Optional: for smoother parallax
+            transition: "transform 0.1s ease-out",
           }}
         ></div>
       </div>
