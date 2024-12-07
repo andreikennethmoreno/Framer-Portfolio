@@ -6,14 +6,14 @@ export default function NavBar() {
             <div className="navbar sticky top-0 z-50 bg-transparent">
                 <div className="flex-1">
                     <Link href="/" passHref>
-                        <div className="btn rounded-lg btn-ghost text-md hover:text-white bg-white bg-opacity-50 backdrop-blur-md">
+                        <div className="btn rounded btn-ghost text-md hover:text-white hover:bg-[#031728] bg-white bg-opacity-50 backdrop-blur-md">
                         DREIKEN<br />MORENO
                         </div>
                     </Link>
                 </div>
 
                 <div className="flex-none">
-                    <ul className="menu menu-horizontal px-1 font-bold rounded-lg text-md hover:text-white hover:bg-transparent bg-white bg-opacity-50 backdrop-blur-md">
+                    <ul className="menu menu-horizontal px-1 font-bold rounded text-md hover:text-white hover:bg-[#031728] bg-white bg-opacity-50 backdrop-blur-md">
                         <li className="">
                             <Link href="/" passHref>
                                 /&nbsp;&nbsp;HOME
